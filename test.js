@@ -1,19 +1,9 @@
-/**
- * @author Titus Wormer
- * @copyright 2016 Titus Wormer
- * @license MIT
- * @module retext:intensify
- * @fileoverview Test suite for `retext-diacritics`.
- */
-
 'use strict';
 
-/* Dependencies. */
 var test = require('tape');
 var retext = require('retext');
 var diacritics = require('./');
 
-/* Tests. */
 test('simplify', function (t) {
   t.plan(2);
 
