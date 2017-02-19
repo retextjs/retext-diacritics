@@ -23,10 +23,8 @@ function diacritics() {
 
     function searcher(match, index, parent, phrase) {
       var value = nlcstToString(match);
-      var replace = quotation(casing(schema[phrase], value), '`');
-      var message;
-
-      message = 'Replace ' + quotation(value, '`') + ' with ' + replace;
+      var replace = casing(schema[phrase], value);
+      var message = 'Replace ' + quotation(value, '`') + ' with ' + quotation(replace, '`');
 
       message = file.warn(message, {
         start: position.start(match[0]),
@@ -34,6 +32,8 @@ function diacritics() {
       }, phrase.replace(/\s+/g, '-').toLowerCase());
 
       message.source = 'retext-diacritics';
+      message.actual = value;
+      message.expected = [replace];
     }
   }
 }
