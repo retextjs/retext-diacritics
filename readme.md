@@ -12,21 +12,35 @@ npm install retext-diacritics
 
 ## Usage
 
-```js
-var retext = require('retext');
-var diacritics = require('retext-diacritics');
-var report = require('vfile-reporter');
+Say we have the following file, `example.txt`:
 
-retext()
+```text
+Beyonce is the creme fresh on his resume.
+```
+
+And our script, `example.js`, looks like this:
+
+```javascript
+var vfile = require('to-vfile');
+var report = require('vfile-reporter');
+var unified = require('unified');
+var english = require('retext-english');
+var stringify = require('retext-stringify');
+var diacritics = require('retext-diacritics');
+
+unified()
+  .use(english)
   .use(diacritics)
-  .process('Beyonce is the creme fresh on his resume.', function (err, file) {
+  .use(stringify)
+  .process(vfile.readSync('example.txt'), function (err, file) {
     console.error(report(err || file));
   });
 ```
 
-Yields:
+Now, running `node example` yields:
 
-```txt
+```text
+example.txt
     1:1-1:8  warning  Replace `Beyonce` with `Beyoncé`            beyonce      retext-diacritics
   1:16-1:27  warning  Replace `creme fresh` with `crème fraîche`  creme-fresh  retext-diacritics
   1:31-1:41  warning  Replace `his resume` with `his résumé`      his-resume   retext-diacritics
