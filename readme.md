@@ -54,9 +54,11 @@ example.txt
 
 Check for proper use of diacritics.
 
-###### `options`
+##### `options`
 
-*   `ignore` (`Array.<string>`) — phrases _not_ to warn about.
+###### `options.ignore`
+
+`Array.<string>` — phrases _not_ to warn about.
 
 ## Related
 
