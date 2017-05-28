@@ -44,6 +44,21 @@ Check for proper use of diacritics.
 
 *   `ignore` (`Array.<string>`) — phrases _not_ to warn about.
 
+## Related
+
+*   [`retext-contractions`](https://github.com/wooorm/retext-contractions)
+    — Check apostrophe use in contractions
+*   [`retext-indefinite-article`](https://github.com/wooorm/retext-indefinite-article)
+    — Check if indefinite articles (`a`, `an`) are used correctly
+*   [`retext-redundant-acronyms`](https://github.com/wooorm/retext-redundant-acronyms)
+    — Check for redundant acronyms (`ATM machine`)
+*   [`retext-repeated-words`](https://github.com/wooorm/retext-repeated-words)
+    — Check `for for` repeated words
+*   [`retext-sentence-spacing`](https://github.com/wooorm/retext-sentence-spacing)
+    — Check spacing (one or two spaces) between sentences
+*   [`retext-quotes`](https://github.com/wooorm/retext-quotes)
+    — Check quote and apostrophe usage
+
 ## License
 
 [MIT][license] © [Titus Wormer][author]
