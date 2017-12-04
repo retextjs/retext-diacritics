@@ -62,17 +62,17 @@ Check for proper use of diacritics.
 
 ## Related
 
-*   [`retext-contractions`](https://github.com/wooorm/retext-contractions)
+*   [`retext-contractions`](https://github.com/retextjs/retext-contractions)
     — Check apostrophe use in contractions
-*   [`retext-indefinite-article`](https://github.com/wooorm/retext-indefinite-article)
+*   [`retext-indefinite-article`](https://github.com/retextjs/retext-indefinite-article)
     — Check if indefinite articles (`a`, `an`) are used correctly
-*   [`retext-redundant-acronyms`](https://github.com/wooorm/retext-redundant-acronyms)
+*   [`retext-redundant-acronyms`](https://github.com/retextjs/retext-redundant-acronyms)
     — Check for redundant acronyms (`ATM machine`)
-*   [`retext-repeated-words`](https://github.com/wooorm/retext-repeated-words)
+*   [`retext-repeated-words`](https://github.com/retextjs/retext-repeated-words)
     — Check `for for` repeated words
-*   [`retext-sentence-spacing`](https://github.com/wooorm/retext-sentence-spacing)
+*   [`retext-sentence-spacing`](https://github.com/retextjs/retext-sentence-spacing)
     — Check spacing (one or two spaces) between sentences
-*   [`retext-quotes`](https://github.com/wooorm/retext-quotes)
+*   [`retext-quotes`](https://github.com/retextjs/retext-quotes)
     — Check quote and apostrophe usage
 
 ## License
@@ -81,13 +81,13 @@ Check for proper use of diacritics.
 
 <!-- Definitions -->
 
-[travis-badge]: https://img.shields.io/travis/wooorm/retext-diacritics.svg
+[travis-badge]: https://img.shields.io/travis/retextjs/retext-diacritics.svg
 
-[travis]: https://travis-ci.org/wooorm/retext-diacritics
+[travis]: https://travis-ci.org/retextjs/retext-diacritics
 
-[codecov-badge]: https://img.shields.io/codecov/c/github/wooorm/retext-diacritics.svg
+[codecov-badge]: https://img.shields.io/codecov/c/github/retextjs/retext-diacritics.svg
 
-[codecov]: https://codecov.io/github/wooorm/retext-diacritics
+[codecov]: https://codecov.io/github/retextjs/retext-diacritics
 
 [npm]: https://docs.npmjs.com/cli/install
 
@@ -95,4 +95,4 @@ Check for proper use of diacritics.
 
 [author]: http://wooorm.com
 
-[retext]: https://github.com/wooorm/retext
+[retext]: https://github.com/retextjs/retext
