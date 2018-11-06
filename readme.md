@@ -1,4 +1,4 @@
-# retext-diacritics [![Build Status][travis-badge]][travis] [![Coverage Status][codecov-badge]][codecov]
+# retext-diacritics [![Build][build-badge]][build] [![Coverage][coverage-badge]][coverage] [![Downloads][downloads-badge]][downloads] [![Chat][chat-badge]][chat]
 
 Check for proper use of diacritics with [**retext**][retext].
 
@@ -89,13 +89,21 @@ repository, organisation, or community you agree to abide by its terms.
 
 <!-- Definitions -->
 
-[travis-badge]: https://img.shields.io/travis/retextjs/retext-diacritics.svg
+[build-badge]: https://img.shields.io/travis/retextjs/retext-diacritics.svg
 
-[travis]: https://travis-ci.org/retextjs/retext-diacritics
+[build]: https://travis-ci.org/retextjs/retext-diacritics
 
-[codecov-badge]: https://img.shields.io/codecov/c/github/retextjs/retext-diacritics.svg
+[coverage-badge]: https://img.shields.io/codecov/c/github/retextjs/retext-diacritics.svg
 
-[codecov]: https://codecov.io/github/retextjs/retext-diacritics
+[coverage]: https://codecov.io/github/retextjs/retext-diacritics
+
+[downloads-badge]: https://img.shields.io/npm/dm/retext-diacritics.svg
+
+[downloads]: https://www.npmjs.com/package/retext-diacritics
+
+[chat-badge]: https://img.shields.io/badge/join%20the%20community-on%20spectrum-7b16ff.svg
+
+[chat]: https://spectrum.chat/unified/retext
 
 [npm]: https://docs.npmjs.com/cli/install
 
