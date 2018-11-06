@@ -77,7 +77,8 @@ Check for proper use of diacritics.
 
 ## Contribute
 
-See [`contribute.md` in `retextjs/retext`][contribute] for ways to get started.
+See [`contributing.md` in `retextjs/retext`][contributing] for ways to get
+started.
 
 This organisation has a [Code of Conduct][coc].  By interacting with this
 repository, organisation, or community you agree to abide by its terms.
@@ -104,6 +105,6 @@ repository, organisation, or community you agree to abide by its terms.
 
 [retext]: https://github.com/retextjs/retext
 
-[contribute]: https://github.com/retextjs/retext/blob/master/contributing.md
+[contributing]: https://github.com/retextjs/retext/blob/master/contributing.md
 
 [coc]: https://github.com/retextjs/retext/blob/master/code-of-conduct.md
