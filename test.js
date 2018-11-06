@@ -1,18 +1,19 @@
-'use strict';
+'use strict'
 
-var test = require('tape');
-var retext = require('retext');
-var diacritics = require('.');
+var test = require('tape')
+var retext = require('retext')
+var diacritics = require('.')
 
-test('diacritics', function (t) {
-  t.plan(2);
+test('diacritics', function(t) {
+  t.plan(2)
 
   retext()
     .use(diacritics)
-    .process([
-      'Beyonce is the creme fresh on his resume.'
-    ].join('\n'), function (err, file) {
-      t.ifError(err, 'should not fail');
+    .process(['Beyonce is the creme fresh on his resume.'].join('\n'), function(
+      err,
+      file
+    ) {
+      t.ifError(err, 'should not fail')
 
       t.deepEqual(
         file.messages.map(String),
@@ -22,6 +23,6 @@ test('diacritics', function (t) {
           '1:31-1:41: Replace `his resume` with `his résumé`'
         ],
         'should warn about missing diacritics'
-      );
-    });
-});
+      )
+    })
+})
