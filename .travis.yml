@@ -4,21 +4,12 @@ node_js:
 - '9.0'
 after_script: bash <(curl -s https://codecov.io/bash)
 deploy:
-  - provider: npm
-    skip_cleanup: true
-    email: tituswormer@gmail.com
-    api_key:
-      secure: CHFszCiwCXk9TovmUj4vYtBzMvftyvC1JNGHurxiXh/LQDkLOTlaf5qeSeYqhyTIH5HiFMToEgqECAbcPYV25PfGnawL2FVD5XW/4xwQg/0Ta9nhY6MXVBm4qzAn4w9sHSQvSypj4GuShSt1surkvpV/vElVt0LFsCCd7hi5Y6uWBCNQB8H7w7uHqKCrKcQZmabj8L6hYGGvSG9B5TXhqp98pP8z2DKfLBEiRTukzWoBJKbovGT2UXyaxqEsmanYbjCqE34VuPDHPkLkLFceTWoijMv2cd/PVWgGdQ1cmHAuwv34SaNgnQBz1VbsqcNJKe2gQGhEHtGV15noXz7lSzMpR2fw0KS+1E+xiWa3djogD0Cdq1vR8ZZ+vuK9RUcMvGsuP8ugdFL0dRQcEyzY4XubAyYtzYsQPI7tlIwjC2/qYQD/0NSrxCMi0drxZxCjwU0Ru/agD5k2UKIUfppk3cwrRD5ak2oV9N2k29VWbkLUtPKqj92CHXHen9AmxZNsdK8F9HdY8VO0fhnSUkTmMpW+XzsHKmrgzFNKS7SEJK3f4plv+fIWMRLanCrLEoajMOFYs9A3C5siBr5C+16FkqvtgXux+z0JMBilWICMt8G6prT1xwOh3cUd7LQRZ836sITbXTvPTWZq3u5xL9D2LF2h5eirWg9IPIGlgbCCCo8=
-    on:
-      tags: true
-      node: '9.0'
-  - provider: releases
-    skip_cleanup: true
-    api_key:
-      secure: JTnFUXgRf4jjsTjn6mmp6kHCOQJPkrTQyRIg+NABgZ35vE+hKyAytp2VoLX0uZ5DnSo3k1HW2F9VoBsJvHIqMYIfD26ma5VGwWqOJ/3aHfoIoWmdNvPMHYymLgXwr5qbmKq5bO3/CRY6obOv8H+wR0UZwW7hgpJOh/xJrRbPHkoCj9g+2V1j6xXefE//3YM6yd9JXXubslRzaEX8OLOIhh0Q0r1brtEedpYy4gzTuN7dbEQbLFLIB23aIKyU9O5XczliHR/PAO17sn22a5YFjb42zmZ4qOZGJ2IjKWn2K+Yb+h0dhcmh9L4YHu46PuG98cjeYt0kvHjp+7IBNjKg8rpiCxYKHL4lohoEtD7WwGrayx1oEleZ3S3lcVH9RFI7HllXJo4O8Swq4y+Nnh0vexJmlUHmudFmn7Y3bZZyMH52K5aPHeq+ZdYW2pVDRYwkre51bRQemFbhen5+ZWS5YxWsmhHQoXpIw/w0L7OXC/oR6CqQJ1uGDQrfCCAvmjg/qmWDVNNMvj4x1Jo3b9kKQRp8JA+I4mIDmKQWxx7unyyrIjDYAuyqNeNCt1gip6CC+SZ3bLQx2/meLg2x6KbJGxJcXb7AVZ5b/OGnM7au2oZnkoMluf8CV1Mr9MLs14dp4bHGINVg+J2D7db16OCIeiBlZ8Pgzq2TAZfIFUcqo2I=
-    file:
-      - "retext-diacritics.js"
-      - "retext-diacritics.min.js"
-    on:
-      tags: true
-      node: '9.0'
+  provider: releases
+  skip_cleanup: true
+  api_key:
+    secure: JTnFUXgRf4jjsTjn6mmp6kHCOQJPkrTQyRIg+NABgZ35vE+hKyAytp2VoLX0uZ5DnSo3k1HW2F9VoBsJvHIqMYIfD26ma5VGwWqOJ/3aHfoIoWmdNvPMHYymLgXwr5qbmKq5bO3/CRY6obOv8H+wR0UZwW7hgpJOh/xJrRbPHkoCj9g+2V1j6xXefE//3YM6yd9JXXubslRzaEX8OLOIhh0Q0r1brtEedpYy4gzTuN7dbEQbLFLIB23aIKyU9O5XczliHR/PAO17sn22a5YFjb42zmZ4qOZGJ2IjKWn2K+Yb+h0dhcmh9L4YHu46PuG98cjeYt0kvHjp+7IBNjKg8rpiCxYKHL4lohoEtD7WwGrayx1oEleZ3S3lcVH9RFI7HllXJo4O8Swq4y+Nnh0vexJmlUHmudFmn7Y3bZZyMH52K5aPHeq+ZdYW2pVDRYwkre51bRQemFbhen5+ZWS5YxWsmhHQoXpIw/w0L7OXC/oR6CqQJ1uGDQrfCCAvmjg/qmWDVNNMvj4x1Jo3b9kKQRp8JA+I4mIDmKQWxx7unyyrIjDYAuyqNeNCt1gip6CC+SZ3bLQx2/meLg2x6KbJGxJcXb7AVZ5b/OGnM7au2oZnkoMluf8CV1Mr9MLs14dp4bHGINVg+J2D7db16OCIeiBlZ8Pgzq2TAZfIFUcqo2I=
+  file:
+    - "retext-diacritics.js"
+    - "retext-diacritics.min.js"
+  on:
+    tags: true
