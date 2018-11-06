@@ -2,7 +2,7 @@
 
 var test = require('tape');
 var retext = require('retext');
-var diacritics = require('./');
+var diacritics = require('.');
 
 test('diacritics', function (t) {
   t.plan(2);
