@@ -1,4 +1,3 @@
-/* eslint-disable quote-props */
 module.exports = {
   // French.
   'beau ideal': 'beau idéal',

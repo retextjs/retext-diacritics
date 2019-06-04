@@ -58,7 +58,7 @@ Check for proper use of diacritics.
 
 ###### `options.ignore`
 
-`Array.<string>` — phrases _not_ to warn about.
+`Array.<string>` — phrases *not* to warn about.
 
 ## Related
 
