@@ -46,7 +46,7 @@ function keys(object) {
   var key
 
   for (key in object) {
-    keys.push(key)
+    result.push(key)
   }
 
   return result
