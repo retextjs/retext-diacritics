@@ -1,6 +1,5 @@
 'use strict'
 
-var keys = require('object-keys')
 var casing = require('match-casing')
 var search = require('nlcst-search')
 var nlcstToString = require('nlcst-to-string')
@@ -40,4 +39,15 @@ function diacritics() {
       message.expected = [replace]
     }
   }
+}
+
+function keys(object) {
+  var result = []
+  var key
+
+  for (key in object) {
+    keys.push(key)
+  }
+
+  return result
 }
