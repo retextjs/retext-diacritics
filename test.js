@@ -9,10 +9,7 @@ test('diacritics', function(t) {
 
   retext()
     .use(diacritics)
-    .process(['Beyonce is the creme fresh on his resume.'].join('\n'), function(
-      err,
-      file
-    ) {
+    .process('Beyonce is the creme fresh on his resume.', function(err, file) {
       t.ifError(err, 'should not fail')
 
       t.deepEqual(
