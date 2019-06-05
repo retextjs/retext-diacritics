@@ -2,12 +2,14 @@
 
 var casing = require('match-casing')
 var search = require('nlcst-search')
-var nlcstToString = require('nlcst-to-string')
+var toString = require('nlcst-to-string')
 var position = require('unist-util-position')
 var quotation = require('quotation')
 var schema = require('./schema')
 
 module.exports = diacritics
+
+var source = 'retext-diacritics'
 
 // List of all phrases.
 var list = keys(schema)
@@ -20,23 +22,23 @@ function diacritics() {
     search(tree, list, searcher)
 
     function searcher(match, index, parent, phrase) {
-      var value = nlcstToString(match)
-      var replace = casing(schema[phrase], value)
-      var message =
-        'Replace ' + quotation(value, '`') + ' with ' + quotation(replace, '`')
+      var actual = toString(match)
+      var expected = casing(schema[phrase], actual)
 
-      message = file.message(
-        message,
+      var message = file.message(
+        'Replace ' +
+          quotation(actual, '`') +
+          ' with ' +
+          quotation(expected, '`'),
         {
           start: position.start(match[0]),
           end: position.end(match[match.length - 1])
         },
-        phrase.replace(/\s+/g, '-').toLowerCase()
+        [source, phrase.replace(/\s+/g, '-').toLowerCase()].join(':')
       )
 
-      message.source = 'retext-diacritics'
-      message.actual = value
-      message.expected = [replace]
+      message.actual = actual
+      message.expected = [expected]
     }
   }
 }
