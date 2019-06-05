@@ -25,7 +25,7 @@ function diacritics() {
       var message =
         'Replace ' + quotation(value, '`') + ' with ' + quotation(replace, '`')
 
-      message = file.warn(
+      message = file.message(
         message,
         {
           start: position.start(match[0]),
