@@ -29,7 +29,7 @@
   ],
   "dependencies": {
     "match-casing": "^1.0.0",
-    "nlcst-search": "^1.0.0",
+    "nlcst-search": "^2.0.0",
     "nlcst-to-string": "^2.0.0",
     "quotation": "^1.0.1",
     "unist-util-position": "^3.0.0"
