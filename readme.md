@@ -73,7 +73,7 @@ The following [`VFileMessage`][message]s are used:
 <!--messages start-->
 
 | `source` | `ruleId` | Incorrect | Correct |
-| -------- | -------- | --------- | ------- |
+| - | - | - | - |
 | `retext-diacritics` | `angstrom` | `Angstrom` | `Ångström` |
 | `retext-diacritics` | `a-la-carte` | `a la carte` | `à la carte` |
 | `retext-diacritics` | `a-la-mode` | `a la mode` | `à la mode` |

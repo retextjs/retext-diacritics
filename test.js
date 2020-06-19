@@ -4,14 +4,14 @@ var test = require('tape')
 var retext = require('retext')
 var diacritics = require('.')
 
-test('diacritics', function(t) {
+test('diacritics', function (t) {
   t.plan(2)
 
   retext()
     .use(diacritics)
-    .process('Beyonce is the creme fresh on his resume.', function(err, file) {
+    .process('Beyonce is the creme fresh on his resume.', function (err, file) {
       t.deepEqual(
-        file.messages[0],
+        JSON.parse(JSON.stringify(file.messages[0])),
         {
           message: 'Replace `Beyonce` with `Beyoncé`',
           name: '1:1-1:8',

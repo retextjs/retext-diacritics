@@ -26,7 +26,7 @@ function handler(start, nodes, end) {
 
   Object.keys(schema)
     .sort()
-    .forEach(function(phrase) {
+    .forEach(function (phrase) {
       rows.push(
         u('tableRow', [
           u('tableCell', [u('inlineCode', 'retext-diacritics')]),
