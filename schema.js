@@ -1,3 +1,4 @@
+/** @type {Record<string, string>} */
 export const schema = {
   // French.
   'beau ideal': 'beau idéal',

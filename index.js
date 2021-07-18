@@ -9,9 +9,14 @@ const source = 'retext-diacritics'
 
 const list = Object.keys(schema)
 
+/**
+ * Plugin to check for proper use of diacritics.
+ *
+ * @type {import('unified').Plugin<[]>}
+ */
 export default function retextDiacritics() {
   return (tree, file) => {
-    search(tree, list, (match, index, parent, phrase) => {
+    search(tree, list, (match, _, _1, phrase) => {
       const actual = toString(match)
       const expected = matchCasing(schema[phrase], actual)
 
