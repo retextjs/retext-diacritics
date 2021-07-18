@@ -1,8 +1,8 @@
-import casing from 'match-casing'
-import search from 'nlcst-search'
-import toString from 'nlcst-to-string'
-import position from 'unist-util-position'
-import quotation from 'quotation'
+import {matchCasing} from 'match-casing'
+import {search} from 'nlcst-search'
+import {toString} from 'nlcst-to-string'
+import {pointStart, pointEnd} from 'unist-util-position'
+import {quotation} from 'quotation'
 import {schema} from './schema.js'
 
 var source = 'retext-diacritics'
@@ -19,7 +19,7 @@ export default function retextDiacritics() {
 
     function searcher(match, index, parent, phrase) {
       var actual = toString(match)
-      var expected = casing(schema[phrase], actual)
+      var expected = matchCasing(schema[phrase], actual)
 
       var message = file.message(
         'Replace ' +
@@ -27,8 +27,8 @@ export default function retextDiacritics() {
           ' with ' +
           quotation(expected, '`'),
         {
-          start: position.start(match[0]),
-          end: position.end(match[match.length - 1])
+          start: pointStart(match[0]),
+          end: pointEnd(match[match.length - 1])
         },
         [source, phrase.replace(/\s+/g, '-').toLowerCase()].join(':')
       )
