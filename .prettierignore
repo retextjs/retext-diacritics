@@ -1,5 +1,2 @@
 coverage/
-retext-diacritics.js
-retext-diacritics.min.js
-*.json
 *.md
