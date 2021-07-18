@@ -1,20 +1,16 @@
-'use strict'
-
-var casing = require('match-casing')
-var search = require('nlcst-search')
-var toString = require('nlcst-to-string')
-var position = require('unist-util-position')
-var quotation = require('quotation')
-var schema = require('./schema')
-
-module.exports = diacritics
+import casing from 'match-casing'
+import search from 'nlcst-search'
+import toString from 'nlcst-to-string'
+import position from 'unist-util-position'
+import quotation from 'quotation'
+import {schema} from './schema.js'
 
 var source = 'retext-diacritics'
 
 // List of all phrases.
 var list = keys(schema)
 
-function diacritics() {
+export default function retextDiacritics() {
   return transform
 
   // Search `tree` for violations.

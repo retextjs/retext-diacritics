@@ -1,14 +1,12 @@
-'use strict'
+import test from 'tape'
+import retext from 'retext'
+import retextDiacritics from './index.js'
 
-var test = require('tape')
-var retext = require('retext')
-var diacritics = require('.')
-
-test('diacritics', function (t) {
+test('retext-diacritics', function (t) {
   t.plan(2)
 
   retext()
-    .use(diacritics)
+    .use(retextDiacritics)
     .process(
       'Beyonce is the creme fresh on his resume.',
       function (error, file) {

@@ -1,4 +1,4 @@
-module.exports = {
+export const schema = {
   // French.
   'beau ideal': 'beau idéal',
   boutonniere: 'boutonnière',

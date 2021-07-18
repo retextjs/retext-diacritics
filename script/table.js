@@ -1,12 +1,8 @@
-'use strict'
+import zone from 'mdast-zone'
+import u from 'unist-builder'
+import {schema} from '../schema.js'
 
-var zone = require('mdast-zone')
-var u = require('unist-builder')
-var schema = require('../schema')
-
-module.exports = table
-
-function table() {
+export default function table() {
   return transformer
 }
 
@@ -24,20 +20,22 @@ function handler(start, nodes, end) {
     ])
   ]
 
-  Object.keys(schema)
-    .sort()
-    .forEach(function (phrase) {
-      rows.push(
-        u('tableRow', [
-          u('tableCell', [u('inlineCode', 'retext-diacritics')]),
-          u('tableCell', [
-            u('inlineCode', phrase.replace(/\s+/g, '-').toLowerCase())
-          ]),
-          u('tableCell', [u('inlineCode', phrase)]),
-          u('tableCell', [u('inlineCode', schema[phrase])])
-        ])
-      )
-    })
+  const keys = Object.keys(schema).sort()
+  let index = -1
+
+  while (++index < keys.length) {
+    const phrase = keys[index]
+    rows.push(
+      u('tableRow', [
+        u('tableCell', [u('inlineCode', 'retext-diacritics')]),
+        u('tableCell', [
+          u('inlineCode', phrase.replace(/\s+/g, '-').toLowerCase())
+        ]),
+        u('tableCell', [u('inlineCode', phrase)]),
+        u('tableCell', [u('inlineCode', schema[phrase])])
+      ])
+    )
+  }
 
   return [start, u('table', rows), end]
 }
