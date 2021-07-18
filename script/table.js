@@ -1,5 +1,5 @@
-import zone from 'mdast-zone'
-import u from 'unist-builder'
+import {zone} from 'mdast-zone'
+import {u} from 'unist-builder'
 import {schema} from '../schema.js'
 
 export default function table() {

@@ -1,5 +1,5 @@
 import test from 'tape'
-import retext from 'retext'
+import {retext} from 'retext'
 import retextDiacritics from './index.js'
 
 test('retext-diacritics', function (t) {
@@ -13,17 +13,17 @@ test('retext-diacritics', function (t) {
         t.deepEqual(
           JSON.parse(JSON.stringify(file.messages[0])),
           {
-            message: 'Replace `Beyonce` with `Beyoncé`',
             name: '1:1-1:8',
+            message: 'Replace `Beyonce` with `Beyoncé`',
             reason: 'Replace `Beyonce` with `Beyoncé`',
             line: 1,
             column: 1,
-            location: {
+            source: 'retext-diacritics',
+            ruleId: 'beyonce',
+            position: {
               start: {line: 1, column: 1, offset: 0},
               end: {line: 1, column: 8, offset: 7}
             },
-            source: 'retext-diacritics',
-            ruleId: 'beyonce',
             fatal: false,
             actual: 'Beyonce',
             expected: ['Beyoncé']
