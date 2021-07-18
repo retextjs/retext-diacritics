@@ -11,7 +11,7 @@ function transformer(tree) {
 }
 
 function handler(start, nodes, end) {
-  var rows = [
+  const rows = [
     u('tableRow', [
       u('tableCell', [u('inlineCode', 'source')]),
       u('tableCell', [u('inlineCode', 'ruleId')]),
