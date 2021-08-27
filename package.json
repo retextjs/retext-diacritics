@@ -34,6 +34,7 @@
     "schema.js"
   ],
   "dependencies": {
+    "@types/nlcst": "^1.0.0",
     "match-casing": "^2.0.0",
     "nlcst-search": "^3.0.0",
     "nlcst-to-string": "^3.0.0",

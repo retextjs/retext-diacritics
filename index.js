@@ -1,3 +1,7 @@
+/**
+ * @typedef {import('nlcst').Root} Root
+ */
+
 import {matchCasing} from 'match-casing'
 import {search} from 'nlcst-search'
 import {toString} from 'nlcst-to-string'
@@ -12,7 +16,7 @@ const list = Object.keys(schema)
 /**
  * Plugin to check for proper use of diacritics.
  *
- * @type {import('unified').Plugin<[]>}
+ * @type {import('unified').Plugin<[], Root>}
  */
 export default function retextDiacritics() {
   return (tree, file) => {

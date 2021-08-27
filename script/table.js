@@ -1,11 +1,17 @@
+/**
+ * @typedef {import('mdast').Root} Root
+ * @typedef {import('mdast').TableContent} TableContent
+ */
+
 import {zone} from 'mdast-zone'
 import {u} from 'unist-builder'
 import {schema} from '../schema.js'
 
-/** @type {import('unified').Plugin<[]>} */
+/** @type {import('unified').Plugin<[], Root>} */
 export default function table() {
   return (tree) => {
     zone(tree, 'messages', (start, _, end) => {
+      /** @type {TableContent[]} */
       const rows = [
         u('tableRow', [
           u('tableCell', [u('inlineCode', 'source')]),
