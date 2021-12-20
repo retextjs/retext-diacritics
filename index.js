@@ -10,6 +10,7 @@ import {quotation} from 'quotation'
 import {schema} from './schema.js'
 
 const source = 'retext-diacritics'
+const url = 'https://github.com/retext/retext-diacritics#readme'
 
 const list = Object.keys(schema)
 
@@ -33,7 +34,7 @@ export default function retextDiacritics() {
           {start: pointStart(match[0]), end: pointEnd(match[match.length - 1])},
           [source, phrase.replace(/\s+/g, '-').toLowerCase()].join(':')
         ),
-        {actual, expected: [expected]}
+        {actual, expected: [expected], url}
       )
     })
   }

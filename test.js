@@ -25,7 +25,8 @@ test('retext-diacritics', (t) => {
           },
           fatal: false,
           actual: 'Beyonce',
-          expected: ['Beyoncé']
+          expected: ['Beyoncé'],
+          url: 'https://github.com/retext/retext-diacritics#readme'
         },
         'should emit a message'
       )
