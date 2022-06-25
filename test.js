@@ -32,7 +32,7 @@ test('retext-diacritics', (t) => {
       )
 
       t.deepEqual(
-        file.messages.map((d) => String(d)),
+        file.messages.map(String),
         [
           '1:1-1:8: Replace `Beyonce` with `Beyoncé`',
           '1:16-1:27: Replace `creme fresh` with `crème fraîche`',
