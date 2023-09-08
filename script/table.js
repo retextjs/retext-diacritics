@@ -5,7 +5,7 @@
 
 import {zone} from 'mdast-zone'
 import {u} from 'unist-builder'
-import {schema} from '../schema.js'
+import {schema} from '../lib/schema.js'
 
 /** @type {import('unified').Plugin<[], Root>} */
 export default function table() {
