@@ -4,12 +4,12 @@
   "description": "retext plugin to check for proper use of diacritics",
   "license": "MIT",
   "keywords": [
-    "unified",
-    "retext",
-    "retext-plugin",
-    "plugin",
     "diacritic",
     "loan",
+    "plugin",
+    "retext",
+    "retext-plugin",
+    "unified",
     "words"
   ],
   "repository": "retextjs/retext-diacritics",
@@ -59,35 +59,29 @@
   },
   "scripts": {
     "build": "tsc --build --clean && tsc --build && type-coverage",
-    "format": "remark . -qfo && prettier . -w --log-level warn && xo --fix",
+    "format": "remark . --frail --output --quiet && prettier . --log-level warn --write && xo --fix",
+    "prepack": "npm run build && npm run format",
+    "test": "npm run build && npm run format && npm run test-coverage",
     "test-api": "node --conditions development test.js",
-    "test-coverage": "c8 --check-coverage --branches 100 --functions 100 --lines 100 --statements 100 --reporter lcov node --conditions development test.js",
-    "test": "npm run build && npm run format && npm run test-coverage"
+    "test-coverage": "c8 --100 --check-coverage --reporter lcov npm run test-api"
   },
   "prettier": {
-    "tabWidth": 2,
-    "useTabs": false,
-    "singleQuote": true,
     "bracketSpacing": false,
+    "singleQuote": true,
     "semi": false,
-    "trailingComma": "none"
-  },
-  "xo": {
-    "prettier": true,
-    "rules": {
-      "unicorn/prefer-at": "off",
-      "unicorn/prefer-string-replace-all": "off"
-    }
+    "tabWidth": 2,
+    "trailingComma": "none",
+    "useTabs": false
   },
   "remarkConfig": {
     "plugins": [
-      "preset-wooorm",
+      "remark-preset-wooorm",
       [
-        "lint-table-pipe-alignment",
+        "remark-lint-table-pipe-alignment",
         false
       ],
       [
-        "gfm",
+        "remark-gfm",
         {
           "tablePipeAlign": false
         }
@@ -98,7 +92,14 @@
   "typeCoverage": {
     "atLeast": 100,
     "detail": true,
-    "strict": true,
-    "ignoreCatch": true
+    "ignoreCatch": true,
+    "strict": true
+  },
+  "xo": {
+    "prettier": true,
+    "rules": {
+      "unicorn/prefer-at": "off",
+      "unicorn/prefer-string-replace-all": "off"
+    }
   }
 }
