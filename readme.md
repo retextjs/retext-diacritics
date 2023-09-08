@@ -126,7 +126,7 @@ The following [`VFileMessage`][vfile-message]s are used:
 | `retext-diacritics` | `bronte` | `bronte` | `brontë` |
 | `retext-diacritics` | `cafe` | `cafe` | `café` |
 | `retext-diacritics` | `cause-celebre` | `cause celebre` | `cause célèbre` |
-| `retext-diacritics` | `champs-elysees` | `champs-elysees` | `champs-Élysées` |
+| `retext-diacritics` | `champs-elysees` | `champs-elysees` | `champs-élysées` |
 | `retext-diacritics` | `chevre` | `chevre` | `chèvre` |
 | `retext-diacritics` | `citroen` | `citroen` | `citroën` |
 | `retext-diacritics` | `cliche` | `cliche` | `cliché` |
@@ -195,8 +195,9 @@ The following [`VFileMessage`][vfile-message]s are used:
 | `retext-diacritics` | `soupcon` | `soupcon` | `soupçon` |
 | `retext-diacritics` | `tete-a-tete` | `tete-a-tete` | `tête-à-tête` |
 | `retext-diacritics` | `the-resume` | `the resume` | `the résumé` |
+| `retext-diacritics` | `their-resume` | `their resume` | `their résumé` |
 | `retext-diacritics` | `touche` | `touche` | `touché` |
-| `retext-diacritics` | `ubermensch` | `ubermensch` | `Übermensch` |
+| `retext-diacritics` | `ubermensch` | `ubermensch` | `übermensch` |
 | `retext-diacritics` | `vis-a-vis` | `vis-a-vis` | `vis-à-vis` |
 | `retext-diacritics` | `voila` | `voila` | `voilà` |
 | `retext-diacritics` | `your-resume` | `your resume` | `your résumé` |

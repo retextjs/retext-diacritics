@@ -16,29 +16,33 @@ test('retext-diacritics', async function (t) {
 
   await t.test('should emit messages', async function () {
     assert.deepEqual(file.messages.map(String), [
-      '1:1-1:8: Replace `Beyonce` with `Beyoncé`',
-      '1:16-1:27: Replace `creme fresh` with `crème fraîche`',
-      '1:31-1:41: Replace `his resume` with `his résumé`'
+      '1:1-1:8: Unexpected undiacritical `Beyonce`, did you mean `Beyoncé`',
+      '1:16-1:27: Unexpected undiacritical `creme fresh`, did you mean `crème fraîche`',
+      '1:31-1:41: Unexpected undiacritical `his resume`, did you mean `his résumé`'
     ])
   })
 
   await t.test('should emit a message w/ metadata', async function () {
-    assert.deepEqual(JSON.parse(JSON.stringify(file.messages[0])), {
-      column: 1,
-      fatal: false,
-      message: 'Replace `Beyonce` with `Beyoncé`',
-      line: 1,
-      name: '1:1-1:8',
-      place: {
-        start: {line: 1, column: 1, offset: 0},
-        end: {line: 1, column: 8, offset: 7}
-      },
-      reason: 'Replace `Beyonce` with `Beyoncé`',
-      ruleId: 'beyonce',
-      source: 'retext-diacritics',
-      actual: 'Beyonce',
-      expected: ['Beyoncé'],
-      url: 'https://github.com/retext/retext-diacritics#readme'
-    })
+    assert.deepEqual(
+      JSON.parse(JSON.stringify({...file.messages[0], ancestors: []})),
+      {
+        ancestors: [],
+        column: 1,
+        fatal: false,
+        message: 'Unexpected undiacritical `Beyonce`, did you mean `Beyoncé`',
+        line: 1,
+        name: '1:1-1:8',
+        place: {
+          start: {line: 1, column: 1, offset: 0},
+          end: {line: 1, column: 8, offset: 7}
+        },
+        reason: 'Unexpected undiacritical `Beyonce`, did you mean `Beyoncé`',
+        ruleId: 'beyonce',
+        source: 'retext-diacritics',
+        actual: 'Beyonce',
+        expected: ['Beyoncé'],
+        url: 'https://github.com/retext/retext-diacritics#readme'
+      }
+    )
   })
 })
