@@ -24,18 +24,23 @@ export default function retextDiacritics() {
     search(tree, list, (match, _, _1, phrase) => {
       const actual = toString(match)
       const expected = matchCasing(schema[phrase], actual)
+      const start = pointStart(match[0])
+      const end = pointEnd(match[match.length - 1])
+      /* c8 ignore next -- hard to test */
+      const place = start && end ? {start, end} : undefined
+      const ruleId = phrase.replace(/\s+/g, '-').toLowerCase()
 
-      Object.assign(
-        file.message(
-          'Replace ' +
-            quotation(actual, '`') +
-            ' with ' +
-            quotation(expected, '`'),
-          {start: pointStart(match[0]), end: pointEnd(match[match.length - 1])},
-          [source, phrase.replace(/\s+/g, '-').toLowerCase()].join(':')
-        ),
-        {actual, expected: [expected], url}
+      const message = file.message(
+        'Replace ' +
+          quotation(actual, '`') +
+          ' with ' +
+          quotation(expected, '`'),
+        {place, ruleId, source}
       )
+
+      message.actual = actual
+      message.expected = [expected]
+      message.url = url
     })
   }
 }

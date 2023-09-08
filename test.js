@@ -12,18 +12,18 @@ test('retext-diacritics', (t) => {
       t.deepEqual(
         JSON.parse(JSON.stringify(file.messages[0])),
         {
-          name: '1:1-1:8',
-          message: 'Replace `Beyonce` with `Beyoncé`',
-          reason: 'Replace `Beyonce` with `Beyoncé`',
-          line: 1,
           column: 1,
-          source: 'retext-diacritics',
-          ruleId: 'beyonce',
-          position: {
+          fatal: false,
+          message: 'Replace `Beyonce` with `Beyoncé`',
+          line: 1,
+          name: '1:1-1:8',
+          place: {
             start: {line: 1, column: 1, offset: 0},
             end: {line: 1, column: 8, offset: 7}
           },
-          fatal: false,
+          reason: 'Replace `Beyonce` with `Beyoncé`',
+          ruleId: 'beyonce',
+          source: 'retext-diacritics',
           actual: 'Beyonce',
           expected: ['Beyoncé'],
           url: 'https://github.com/retext/retext-diacritics#readme'
