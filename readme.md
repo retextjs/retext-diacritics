@@ -47,14 +47,14 @@ npm install retext-diacritics
 In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import retextDiacritics from 'https://esm.sh/retext-diacritics@4'
+import retextDiacritics from 'https://esm.sh/retext-diacritics@5'
 ```
 
 In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import retextDiacritics from 'https://esm.sh/retext-diacritics@4?bundle'
+  import retextDiacritics from 'https://esm.sh/retext-diacritics@5?bundle'
 </script>
 ```
 
