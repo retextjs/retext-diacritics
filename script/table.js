@@ -7,11 +7,22 @@ import {zone} from 'mdast-zone'
 import {u} from 'unist-builder'
 import {schema} from '../lib/schema.js'
 
-/** @type {import('unified').Plugin<[], Root>} */
+/**
+ * @returns
+ *   Transform.
+ */
 export default function table() {
-  return (tree) => {
-    zone(tree, 'messages', (start, _, end) => {
-      /** @type {TableContent[]} */
+  /**
+   * Transform.
+   *
+   * @param {Root} tree
+   *   Tree.
+   * @returns {undefined}
+   *   Nothing.
+   */
+  return function (tree) {
+    zone(tree, 'messages', function (start, _, end) {
+      /** @type {Array<TableContent>} */
       const rows = [
         u('tableRow', [
           u('tableCell', [u('inlineCode', 'source')]),
@@ -26,6 +37,7 @@ export default function table() {
 
       while (++index < keys.length) {
         const phrase = keys[index]
+
         rows.push(
           u('tableRow', [
             u('tableCell', [u('inlineCode', 'retext-diacritics')]),
