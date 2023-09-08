@@ -38,7 +38,7 @@ grammar mistakes, and have authors that can fix that content.
 ## Install
 
 This package is [ESM only][esm].
-In Node.js (version 12.20+, 14.14+, 16.0+, or 18.0+), install with [npm][]:
+In Node.js (version 16+), install with [npm][]:
 
 ```sh
 npm install retext-diacritics
@@ -66,15 +66,15 @@ Say our document `example.txt` contains:
 Beyonce is the creme fresh on his resume.
 ```
 
-…and our module `example.js` looks as follows:
+…and our module `example.js` contains:
 
 ```js
-import {read} from 'to-vfile'
-import {reporter} from 'vfile-reporter'
-import {unified} from 'unified'
-import retextEnglish from 'retext-english'
 import retextDiacritics from 'retext-diacritics'
+import retextEnglish from 'retext-english'
 import retextStringify from 'retext-stringify'
+import {read} from 'to-vfile'
+import {unified} from 'unified'
+import {reporter} from 'vfile-reporter'
 
 const file = await unified()
   .use(retextEnglish)
@@ -85,13 +85,13 @@ const file = await unified()
 console.error(reporter(file))
 ```
 
-…now running `node example.js` yields:
+…then running `node example.js` yields:
 
 ```txt
 example.txt
-    1:1-1:8  warning  Replace `Beyonce` with `Beyoncé`            beyonce      retext-diacritics
-  1:16-1:27  warning  Replace `creme fresh` with `crème fraîche`  creme-fresh  retext-diacritics
-  1:31-1:41  warning  Replace `his resume` with `his résumé`      his-resume   retext-diacritics
+1:1-1:8   warning Unexpected undiacritical `Beyonce`, did you mean `Beyoncé`           beyonce     retext-diacritics
+1:16-1:27 warning Unexpected undiacritical `creme fresh`, did you mean `crème fraîche` creme-fresh retext-diacritics
+1:31-1:41 warning Unexpected undiacritical `his resume`, did you mean `his résumé`     his-resume  retext-diacritics
 
 ⚠ 3 warnings
 ```
@@ -99,11 +99,19 @@ example.txt
 ## API
 
 This package exports no identifiers.
-The default export is `retextDiacritics`.
+The default export is [`retextDiacritics`][api-retext-diacritics].
 
 ### `unified().use(retextDiacritics)`
 
 Check for proper use of diacritics.
+
+###### Parameters
+
+There are no parameters.
+
+###### Returns
+
+Transform ([`Transformer`][unified-transformer]).
 
 ## Messages
 
@@ -204,9 +212,6 @@ The following [`VFileMessage`][vfile-message]s are used:
 
 <!--messages end-->
 
-The offending value is stored at `message.actual`, and the suggested values are
-stored at `message.expected`.
-
 ## Types
 
 This package is fully typed with [TypeScript][].
@@ -214,10 +219,13 @@ It exports no additional types.
 
 ## Compatibility
 
-Projects maintained by the unified collective are compatible with all maintained
+Projects maintained by the unified collective are compatible with maintained
 versions of Node.js.
-As of now, that is Node.js 12.20+, 14.14+, 16.0+, and 18.0+.
-Our projects sometimes work with older versions, but this is not guaranteed.
+
+When we cut a new major release, we drop support for unmaintained versions of
+Node.
+This means we try to keep the current release line, `retext-diacritics@^4`,
+compatible with Node.js 12.
 
 ## Related
 
@@ -262,9 +270,9 @@ abide by its terms.
 
 [downloads]: https://www.npmjs.com/package/retext-diacritics
 
-[size-badge]: https://img.shields.io/bundlephobia/minzip/retext-diacritics.svg
+[size-badge]: https://img.shields.io/bundlejs/size/retext-diacritics
 
-[size]: https://bundlephobia.com/result?p=retext-diacritics
+[size]: https://bundlejs.com/?q=retext-diacritics
 
 [sponsors-badge]: https://opencollective.com/unified/sponsors/badge.svg
 
@@ -296,8 +304,12 @@ abide by its terms.
 
 [author]: https://wooorm.com
 
-[unified]: https://github.com/unifiedjs/unified
-
 [retext]: https://github.com/retextjs/retext
 
+[unified]: https://github.com/unifiedjs/unified
+
+[unified-transformer]: https://github.com/unifiedjs/unified#transformer
+
 [vfile-message]: https://github.com/vfile/vfile-message
+
+[api-retext-diacritics]: #unifieduseretextdiacritics
